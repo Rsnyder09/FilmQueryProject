@@ -19,14 +19,17 @@ public class Film {
 	private double repCost; 
 	private String rating; 
 	private String features;
+	private String langName;
 	
 	public Film() {
 		
 	}
 	
+
+	
 	public Film( int filmId, String title, String desc, short releaseYear, int langId, int rentDur,
 			double rate, int length, double repCost, String rating, String features) {
-		super();
+		
 		
 		this.filmId = filmId;
 		this.title = title;
@@ -39,6 +42,17 @@ public class Film {
 		this.repCost = repCost;
 		this.rating = rating;
 		this.features = features;
+	}
+
+
+
+	public Film(String title,short releaseYear, String rating, String desc,String langName, List<Actor> actors) {
+		this.title = title;
+		this.releaseYear = releaseYear;
+		this.rating = rating;
+		this.desc = desc;
+		this.langName = langName;
+		this.actors = actors;
 	}
 
 
@@ -161,12 +175,23 @@ public class Film {
 		this.features = features;
 	}
 
+	
+
+	public String getLangName() {
+		return langName;
+	}
+
+
+
+	public void setLangName(String langName) {
+		this.langName = langName;
+	}
+
+
 
 	@Override
 	public String toString() {
-		return "Film [actors=" + actors + ", filmId=" + filmId + ", title=" + title + ", desc=" + desc
-				+ ", releaseYear=" + releaseYear + ", langId=" + langId + ", rentDur=" + rentDur + ", rate=" + rate
-				+ ", length=" + length + ", repCost=" + repCost + ", rating=" + rating + ", features=" + features + "]";
+		return "Title: " + title + ", Year: " + releaseYear + ", Rating: " + rating + ", Description: " + desc + ", Language: " + langName + ", Actors" + actors;
 	}
 
 
